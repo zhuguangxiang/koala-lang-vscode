@@ -1,0 +1,147 @@
+// 示例 Koala 代码文件
+// 用于测试 VSCode 语法高亮
+
+import "std/ut"
+from "std/ut" import assert_eq
+
+// 类定义
+class Dog {
+    pub func name() str {
+        return "dog"
+    }
+    
+    pub func bark() str {
+        return "woof"
+    }
+}
+
+class Cat {
+    pub func name() str {
+        return "cat"
+    }
+}
+
+// 普通函数
+func add(a int, b int) int {
+    return a + b
+}
+
+// 带泛型的函数
+func identity[T](value T) T {
+    return value
+}
+
+// 测试注解
+@test
+pub func test_add() {
+    assert_eq(add(1, 2), 3)
+    assert_eq(add(0, 0), 0)
+}
+
+// 跳过测试
+@skip
+func test_skipped() {
+    // 这个测试会被跳过
+    unreachable()
+}
+
+// 应该 panic 的测试
+@should_panic("division by zero")
+func test_divide_by_zero() {
+    var x = 1 / 0
+}
+
+// 基准测试
+@bench(warmup=2, runs=10)
+func bench_fibonacci() {
+    var a = 0
+    var b = 1
+    var i = 0
+    while i < 30 {
+        let temp = a + b
+        a = b
+        b = temp
+        i = i + 1
+    }
+}
+
+// 控制流示例
+func control_flow_example() {
+    var x = 10
+    
+    // if-else
+    if x > 5 {
+        print("greater")
+    } else if x == 5 {
+        print("equal")
+    } else {
+        print("less")
+    }
+    
+    // while 循环
+    var i = 0
+    while i < 10 {
+        if i == 5 {
+            break
+        }
+        i = i + 1
+    }
+    
+    // for 循环
+    for j in [1, 2, 3] {
+        print(j)
+    }
+    
+    // match 表达式
+    let result = match x {
+        1 => "one",
+        2 => "two",
+        _ => "other"
+    }
+}
+
+// 类型收窄
+func narrow_type(v Cat | Dog) str {
+    if v is Cat {
+        return v.name()
+    } else if v is Dog {
+        return v.bark()
+    }
+    return ""
+}
+
+// 各种类型
+func type_examples() {
+    var int_val: int = 42
+    var float_val: float = 3.14
+    var str_val: str = "hello"
+    var bool_val: bool = true
+    var nil_val = nil
+    
+    // 十六进制
+    var hex = 0xFF
+    
+    // 科学计数法
+    var sci = 1.5e10
+}
+
+// 字符串示例
+func string_examples() {
+    var s1 = "hello world"
+    var s2 = "escape: \n \t \\"
+    
+    // 字符串操作
+    if "he" in "hello" {
+        print("found")
+    }
+}
+
+// 多行注释
+/*
+这是一个多行注释
+可以跨越多行
+*/
+func commented_function() {
+    // 单行注释
+    return 42
+}

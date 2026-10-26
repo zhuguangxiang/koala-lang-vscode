@@ -1,0 +1,39 @@
+{
+  "name": "koala-lang",
+  "displayName": "Koala Language",
+  "description": "Language support for Koala programming language",
+  "version": "0.1.0",
+  "publisher": "koala-lang",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "koala",
+        "aliases": [
+          "Koala",
+          "koala"
+        ],
+        "extensions": [
+          ".kl"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/koala.svg",
+          "dark": "./icons/koala.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "koala",
+        "scopeName": "source.koala",
+        "path": "./syntaxes/koala.tmLanguage.json"
+      }
+    ]
+  }
+}
