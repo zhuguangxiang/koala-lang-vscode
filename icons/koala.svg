@@ -1,3 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <text x="16" y="24" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#007acc" text-anchor="middle" transform="scale(0.8, 1)" transform-origin="16 24">KL</text>
+  <text x="16" y="25" font-family="Arial, sans-serif" font-size="26" font-weight="900" fill="#005f91" stroke="#005f91" stroke-width="2" text-anchor="middle" letter-spacing="4" transform="scale(0.75, 1)" transform-origin="16 25">KL</text>
 </svg>
